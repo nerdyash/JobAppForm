@@ -1,0 +1,14 @@
+<div class="container" style="margin:7%">
+  <h1>Questions:</h1>
+  <form role="form" name="myForm" novalidate>
+    <div class="form-group">
+      <label for="que1">Why do you want to work here?</label>
+      <textarea rows="5"  class="form-control" id="que1" ng-model="myque1" placeholder="Please Justify your answer" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="que1">Do you have any suggestion to improve our product?</label>
+      <textarea rows="5"  class="form-control" id="que2" ng-model="myque2" placeholder="Please Justify your answer" required></textarea>
+    </div>
+    <a ui-sref="files"><button ng-disabled="myForm.$invalid" type="submit" ng-click="save()" class="btn btn-info">Next</button></a>
+  </form>
+</div>

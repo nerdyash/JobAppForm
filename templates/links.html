@@ -1,0 +1,19 @@
+<div class="container" style="margin:7%">
+  <h1>Links:</h1>
+  <form role="form" name="myForm">
+    <div class="form-group">
+      <label for="linkedin">LinkedIn:</label>
+      <input type="text" class="form-control" id="linkedin" ng-model="mylinkedin" required="" />
+    </div>
+    <div class="form-group">
+      <label for="port">Website / Portfolio:</label>
+      <input type="text" class="form-control" id="port" ng-model="myport" required="" />
+    </div>
+    <div class="form-group">
+      <label for="git">GitHub:</label>
+      <input type="text" class="form-control" id="git" ng-model="mygit" required="" />
+    </div>
+      <a ui-sref="question"><button ng-disabled="myForm.$invalid" type="submit" ng-click="save()" class="btn btn-info">Next</button></a>
+
+  </form>
+</div>

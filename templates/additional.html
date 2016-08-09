@@ -1,0 +1,16 @@
+<div class="container" style="margin:7%">
+  <h1>Additional Information:</h1>
+  <form role="form" name="myForm">
+    <div class="form-group">
+      <label for="gender">Gender </label>
+
+        <select class="form-control" id="gender" ng-model="myGender" required="">
+          <option ng-selected="true">None</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Do not want to disclose</option>
+        </select>
+      </div>
+    <a ui-sref="preview"><button ng-disabled="myForm.$invalid" type="submit" ng-click="save()" class="btn btn-info">Next</button></a>
+  </form>
+</div>
