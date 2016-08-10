@@ -2,7 +2,7 @@
     var app = angular.module("jobApp", ["ui.router", "ngStorage"]);
 
 
-        app.config(["$stateProvider", "$urlRouterProvider",function($stateProvider, $urlRouterProvider){
+        app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
             $urlRouterProvider.otherwise("/apply");
 
@@ -44,40 +44,72 @@
                     controller:'previewController'
                 })
 
-        }]);
-        app.controller("basicController", function($scope, $localStorage){
-            
+                $locationProvider.html5Mode(true);
+
+        });
+        app.controller("basicController", function($state, $scope, $localStorage){
+
+
+
             $scope.save = function() {
                 $localStorage.email = $scope.myEmail;
                 $localStorage.name = $scope.myName;
                 $localStorage.phone = $scope.myPhone;
             }
+
+            $scope.$on("$stateChangeStart", function(event, toState){
+                if(!confirm("Are you sure you want to submit? You can't change after Next.")){
+                    event.preventDefault();
+                }
+
+            });
         });
-        app.controller("filesController", function($scope, $localStorage){
-            $scope.save = function() {
-                $localStorage.resume = $scope.myresume;
-                $localStorage.cl = $scope.mycl;
-            }
+        app.controller("filesController", function($state, $scope){
+
+            $scope.$on("$stateChangeStart", function(event, toState){
+                if(!confirm("Are you sure you want to submit? You can't change after Next.")){
+                    event.preventDefault();
+                }
+
+            });
         });
-        app.controller("linksController", function($scope, $localStorage){
+        app.controller("linksController", function($state, $scope, $localStorage){
             $scope.save = function() {
                 $localStorage.linkedin = $scope.mylinkedin;
                 $localStorage.port = $scope.myport;
                 $localStorage.git = $scope.mygit;
             }
+            $scope.$on("$stateChangeStart", function(event, toState){
+                if(!confirm("Are you sure you want to submit? You can't change after Next.")){
+                    event.preventDefault();
+                }
+
+            });
         });
-        app.controller("questionController", function($scope, $localStorage){
+        app.controller("questionController", function($state, $scope, $localStorage){
             $scope.save = function() {
                 $localStorage.que1 = $scope.myque1;
                 $localStorage.que2 = $scope.myque2;
 
             }
+            $scope.$on("$stateChangeStart", function(event, toState){
+                if(!confirm("Are you sure you want to submit? You can't change after Next.")){
+                    event.preventDefault();
+                }
+
+            });
         });
-        app.controller("additionalController", function($scope, $localStorage){
+        app.controller("additionalController", function($state, $scope, $localStorage){
             $scope.save = function() {
                 $localStorage.gender = $scope.myGender;
 
             }
+            $scope.$on("$stateChangeStart", function(event, toState){
+                if(!confirm("Are you sure you want to submit? You can't change after Next.")){
+                    event.preventDefault();
+                }
+
+            });
         });
 
         app.controller("previewController", function($scope, $localStorage){

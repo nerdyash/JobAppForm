@@ -3,12 +3,12 @@
   <form role="form" name="myForm">
     <div class="form-group">
       <label for="resume">Resume </label>
-      <input type="file" class="btn btn-lg btn-success" rows="5"  class="form-control" id="resume" ng-model="myresume" required=""/>
+      <input type="file" class="btn btn-lg btn-success" rows="5"  class="form-control" id="resume" ng-model="myresume" required/>
     </div>
     <div class="form-group">
       <label for="cl">Cover Letter </label>
-      <input type="file" class="btn btn-lg btn-success" rows="5"  class="form-control" id="cl" ng-model="mycl" required=""/>
+      <input type="file" class="btn btn-lg btn-success" rows="5"  class="form-control" id="cl" ng-model="mycl" required/>
     </div>
-    <a ui-sref="additional"><button ng-disabled="myForm.$invalid" type="submit" ng-click="save()" class="btn btn-info">Next</button></a>
+    <a ui-sref="additional"><button  type="submit" class="btn btn-info">Next</button></a>
   </form>
 </div>
